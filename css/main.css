@@ -902,7 +902,58 @@ div.paquetes .tabla-precio input{
     color: #fe4918;
     font-weight: bold;
 }
-/* ==========================================================================
+
+/*Resumen Registro*/
+
+.resumen p{
+     text-transform: uppercase;
+     text-align: center;
+     font-size: 1.2em;
+}
+
+div.resumen div.extras{
+    float: left;
+    width: 50%;
+    padding: 30px;
+}
+
+div.extras div.orden{
+    text-align: left;
+    margin-bottom:10px; 
+}
+div.extras div.orden input{
+    margin: 10px 0 0 0 ;
+}
+
+div.resumen div.total{
+    float: right;
+    width: 50%;
+    padding:30px;
+}
+
+div.resumen input{
+    display: block;
+    margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==
+========================================================================
    Helper classes
    ========================================================================== */
 
