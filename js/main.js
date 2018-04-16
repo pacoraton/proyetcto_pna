@@ -1,13 +1,48 @@
-/* 
+
 var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
 
-function initMap() {
-        map = new google.maps.Map(document.getElementById('mapa'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+
+      function initMap() {
+        
+        var latlng={
+        	lat:20.6414217,
+        	lng:-103.351598
+        } 
+
+        var  map = new google.maps.Map(document.getElementById('mapa'), {
+          'center':latlng,
+          'zoom': 14,
+          'mapTypeId':google.maps.MapTypeId.ROADMAP
         });
 
-*/
+        /*'mapTypeId':google.maps.MapTypeId.HYBRID
+        									SATELLITE
+        									TERRAIN
+        									ROADMAP
+        */
+ 	    
+        var contenido= '<h2>GDLWEBCAM</h2>'+
+        			   '<p>Del 10 al 12 de Diciembre</p>'+
+        			   '<p>Visitanos</p>';
+
+ 		var informacion= new google.maps.InfoWindow({
+ 			content:contenido	
+ 		});
+
+        var marker =new google.maps.Marker({
+          position:latlng,
+          map:map,
+          title:'GDLWEBCAM'
+        });
+
+        marker.addListener('click',function(){
+           informacion.open(map,marker);
+
+        });
+
+      }
+
+
 (function(){
     'use strict';
 
@@ -38,15 +73,15 @@ function initMap() {
         var camisas=document.getElementById('camisa_evento');
 
        //Agregando evento click al boton calcular 
+       if(calcular !== null) {
        calcular.addEventListener('click',calcularMontos);
-        
 
        //Agregamos Evento para conocer cual pase elige el usuario agregando la funcion mostrarDias
        pase_dia.addEventListener('blur',mostrarDias);
        pase_completo.addEventListener('blur',mostrarDias); 
        pase_dosdias.addEventListener('blur',mostrarDias);
 
-      
+      }
       //Validacion de los campos de informacion del usuario (nombre,apellido,email) por ejemplo cuando mandan nombre vacio (lo dejamos en required en html5).
      /* nombre.addEventListener('blur',ValidarCampos);
       apellido.addEventListener('blur',ValidarCampos);
