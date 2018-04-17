@@ -206,3 +206,28 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
      });//DOM CONTENT LOADED
 
 })();
+
+
+$(function(){
+    
+    //ocultamos talleres
+    $('div.ocultar').hide();
+   
+   //Programa de Conferencia
+   //Mostramos el primer taller
+   $('.programa-evento .info-curso:first').show();
+   $('.menu-programa a:first').addClass('activo');
+   //evento al hacer click en enlaces
+   $('.menu-programa a').on('click',function(){
+    $('.menu-programa a').removeClass('activo');
+    $(this).addClass('activo');
+    //ocultamos el taller
+   $('.ocultar').fadeOut(1500);
+      
+      //recuperamos el id del enlace pulsado y lo mostramos
+      var enlace_presionado=$(this).attr('href');
+      $(enlace_presionado).fadeIn(1500);
+
+      return false;
+   });
+});
