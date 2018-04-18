@@ -215,6 +215,11 @@ ul{
     float: right;
 }
 
+/*--Lettering--*/
+h1.nombre-sitio span{
+    
+}
+
 /**--Header--**/
 
 div.hero{
@@ -302,8 +307,16 @@ h1.nombre-sitio{
 
 div.barra{
    background-color: #353535;
-   padding:; 20px 0;
+   padding: 20px 0;
 }
+.fixed{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2
+}
+
 div.logo{
     width: 80%;
     float: left;
@@ -845,6 +858,17 @@ p.copyright{
 }
 
 /*Paginas internas*/
+
+/*Conferencia*/
+div.galeria a{
+    display: inline-block;
+    margin: 7px;
+}
+
+body.conferencia .navegacion-principal .activo{
+    border-bottom: 2px solid #fe4918;
+}
+
 /*Registro*/
 form.registro h3{
     text-align: center;

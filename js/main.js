@@ -209,11 +209,42 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
 
 
 $(function(){
-    
+  
+  //----------------LETTERING-------------------------------------//
+  $('.nombre-sitio').lettering();
+
+ 
+  //-------------MENU FIJO----------------------------------------//
+     var windowHeight= $(window).height();//altura ventana
+     var barraAltura= $('.barra').innerHeight();//altura barra
+
+     $(window).scroll(function(){
+        var scroll = $ (window).scrollTop();
+        if(scroll>windowHeight){
+           $('.barra').addClass('fixed');
+           $('body').css({'margin-top':barraAltura+'px'});
+
+        }else{
+           $('.barra').removeClass('fixed');
+            $('body').css({'margin-top':'0px'});
+        }
+
+        //console.log(scroll);
+     });
+
+
+
+  //--------------------Menu Responsive--------------------------------//
+
+    $('.menu-movil span').on('click',function(){
+         $('.navegacion-principal').slideToggle()
+    });
+   
+
+  //------------------Programa de Conferencia----------------------// 
     //ocultamos talleres
     $('div.ocultar').hide();
-   
-   //Programa de Conferencia
+  
    //Mostramos el primer taller
    $('.programa-evento .info-curso:first').show();
    $('.menu-programa a:first').addClass('activo');
@@ -230,4 +261,29 @@ $(function(){
 
       return false;
    });
+
+
+
+
+
+//-------------ANIMACIONES PARA LOS NUMEROS-------------------//
+     
+     $('.resumen-evento li:nth-child(1) p').animateNumber({number:6},3000);
+     $('.resumen-evento li:nth-child(2) p').animateNumber({number:15},3000);
+     $('.resumen-evento li:nth-child(3) p').animateNumber({number:3},3000);
+     $('.resumen-evento li:nth-child(4) p').animateNumber({number:9},3000);
+
+
+
+//------------ANIMACION CUENTA REGRESIVA----------------------//
+ $('.cuenta-regresiva').countdown('2018/08/19 06:00:00',function(e){
+    $('#dias').html(e.strftime('%D'));
+    $('#horas').html(e.strftime('%H'));
+    $('#minutos').html(e.strftime('%M'));
+    $('#segundos').html(e.strftime('%S'));
+ });
+
+
+
+
 });
