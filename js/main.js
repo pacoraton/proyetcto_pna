@@ -283,7 +283,11 @@ $(function(){
     $('#segundos').html(e.strftime('%S'));
  });
 
-
+ //-------------------COLORBOX------------------//
+ if( $('.invitado-info').length > 0  ) {
+  $('.invitado-info').colorbox();
+  }
+$('.invitado-info').colorbox({inline:true,width:"50%"});
 
 
 });

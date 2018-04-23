@@ -14,7 +14,20 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/main.css">
+        
+    <?php
+    //cODIGO PARA CARGAR ARCHIVOS SOLO DONDE SE NECESITAN
+      $archivo=basename($_SERVER['PHP_SELF']);
+      $pagina=str_replace(".php","",$archivo);
+      if($pagina=='invitados'){
+         echo '<link rel="stylesheet" href="css/colorbox.css"> ';
+      }else if($pagina == 'conferencia'){
+        echo '<link rel="stylesheet" href="css/lightbox.css"> ';
+      }
+
+    ?>
+
+        <link rel="stylesheet" href="css/main.css"> 
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -61,8 +74,8 @@
                 
                 <nav class="navegacion-principal clearfix">
                     <a href="conferencia.php">Conferencia</a>
-                    <a href="#">Calendario</a>
-                    <a href="#">Invitados</a>
+                    <a href="calendario.php">Calendario</a>
+                    <a href="invitados.php">Invitados</a>
                     <a href="registro.php">Reservaciones</a>              
                 </nav>   
             </div><!--.contenedor -->

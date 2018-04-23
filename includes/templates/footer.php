@@ -40,6 +40,19 @@
          <script src="js/jquery.animateNumber.min.js"></script>
          <script src="js/jquery.countdown.min.js"></script> 
          <script src="js/jquery.lettering.js"></script>
+         <?php
+    //cODIGO PARA CARGAR ARCHIVOS SOLO DONDE SE NECESITAN
+      $archivo=basename($_SERVER['PHP_SELF']);
+      $pagina=str_replace(".php","",$archivo);
+      if($pagina=='invitados'){
+         echo '<script src="js/jquery.colorbox-min.js"></script> ';
+      }else if($pagina == 'conferencia'){
+        echo '<script src="js/lightbox.js"></script> ';
+      }
+
+    ?>
+
+         <script src="js/jquery.colorbox-min.js"></script>
         <script src="js/main.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o&callback=initMap"
     async defer></script>
