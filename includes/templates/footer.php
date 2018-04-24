@@ -44,7 +44,7 @@
     //cODIGO PARA CARGAR ARCHIVOS SOLO DONDE SE NECESITAN
       $archivo=basename($_SERVER['PHP_SELF']);
       $pagina=str_replace(".php","",$archivo);
-      if($pagina=='invitados'){
+      if($pagina=='invitados' || $pagina=='index'){
          echo '<script src="js/jquery.colorbox-min.js"></script> ';
       }else if($pagina == 'conferencia'){
         echo '<script src="js/lightbox.js"></script> ';

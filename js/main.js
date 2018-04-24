@@ -210,6 +210,14 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
 
 $(function(){
   
+//--------Agregar clase a menu para indicar en que pagina estamos------------//
+
+$('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+$('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+$('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+
+
+
   //----------------LETTERING-------------------------------------//
   $('.nombre-sitio').lettering();
 

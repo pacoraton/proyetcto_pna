@@ -19,7 +19,7 @@
     //cODIGO PARA CARGAR ARCHIVOS SOLO DONDE SE NECESITAN
       $archivo=basename($_SERVER['PHP_SELF']);
       $pagina=str_replace(".php","",$archivo);
-      if($pagina=='invitados'){
+      if($pagina=='invitados' || $pagina=='index'){
          echo '<link rel="stylesheet" href="css/colorbox.css"> ';
       }else if($pagina == 'conferencia'){
         echo '<link rel="stylesheet" href="css/lightbox.css"> ';
@@ -29,7 +29,7 @@
 
         <link rel="stylesheet" href="css/main.css"> 
     </head>
-    <body>
+    <body class="<?php echo $pagina ?>">;
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
