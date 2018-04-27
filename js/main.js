@@ -173,6 +173,7 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
                  document.getElementById('total_pedido').value=total_pagar;
   
             console.log(listadoProductos);
+
        	}//else
 
       }//funcion_calcularMontos
@@ -304,4 +305,5 @@ $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('acti
 $('.invitado-info').colorbox({inline:true,width:"50%"});
 
 
+$('.boton_newsletter').colorbox({inline:true,width:"50%"});
 });
