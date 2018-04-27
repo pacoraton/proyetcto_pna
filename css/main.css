@@ -1052,6 +1052,9 @@ div.cboxElement{
     text-align: center;
 }
 
+input[disabled].button {
+    opacity: .5;
+  }
 
 
 

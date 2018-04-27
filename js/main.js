@@ -71,7 +71,8 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
 		//extras
         var etiquetas=document.getElementById('etiquetas');                 
         var camisas=document.getElementById('camisa_evento');
-
+        
+        botonRegistro.disabled= true;
        //Agregando evento click al boton calcular 
        if(calcular !== null) {
        calcular.addEventListener('click',calcularMontos);
@@ -163,8 +164,13 @@ var api_google='AIzaSyB7UmiwOl-LKZo0b2aohNNcJTnTA02q43o';
                  }
 
 
-                 Suma_Total.innerHTML="";
+                 
                  Suma_Total.innerHTML='$ '+ total_pagar.toFixed(2);
+
+                 botonRegistro.disabled=false;
+                // botonRegistro.addClass('button');
+                
+                 document.getElementById('total_pedido').value=total_pagar;
   
             console.log(listadoProductos);
        	}//else
